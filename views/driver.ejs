@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Driver</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .containers {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Become a Driver Section */
+        .become-driver {
+            padding: 40px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .become-driver h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .become-driver form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .become-driver label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .become-driver input[type="text"],
+        .become-driver input[type="email"],
+        .become-driver input[type="tel"],
+        .become-driver input[type="number"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .become-driver button.btn-primary {
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .become-driver button.btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .social-media {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+        }
+
+        footer .social-media li {
+            display: inline;
+        }
+
+        footer .social-media li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        footer .social-media li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .become-driver form {
+                gap: 10px;
+            }
+
+            .become-driver button.btn-primary {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <section class="become-driver">
+        <div class="containers">
+            <h2>Become a Driver</h2>
+            <form action="/become-driver" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="vehicle">Vehicle Details:</label>
+                <input type="text" id="vehicle" name="vehicle" placeholder="Enter vehicle make, model, and year" required>
+
+                <label for="license">Driver's License Number:</label>
+                <input type="text" id="license" name="license" placeholder="Enter your driver's license number" required>
+
+                <label for="experience">Driving Experience (years):</label>
+                <input type="number" id="experience" name="experience" min="0" required>
+
+                <button type="submit" class="btn-primary">Register as Driver</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Go-&gt;Cab. All rights reserved.</p>
+            <ul class="social-media">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
